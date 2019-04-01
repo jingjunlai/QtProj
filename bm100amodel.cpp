@@ -16,3 +16,8 @@ void BM100AModel::reciveData(const QString &str)
     tempStr = "0";
 }
 
+void BM100AModel::handleData(QByteArray Data)
+{
+
+}
+

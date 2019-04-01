@@ -9,6 +9,7 @@ public:
     BM100AModel();
     ~BM100AModel();
     void reciveData(const QString &str);
+    virtual void handleData(QByteArray Data);
 };
 
 #endif // BM100AMODEL_H

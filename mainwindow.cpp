@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxComPort->addItem(Qspinfo.portName());
     }
 
-    //m_Model = new BM100AModel();
+    m_Model = new BM100AModel();
 }
 
 MainWindow::~MainWindow()
