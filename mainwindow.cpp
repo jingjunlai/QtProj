@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBoxComPort->addItem(Qspinfo.portName());
     }
 
-    m_Model = new BM100AModel();
+    //m_Model = new BM100AModel();
 }
 
 MainWindow::~MainWindow()
@@ -59,7 +59,7 @@ void MainWindow::setData(QByteArray Data)
 
 void MainWindow::enableNibpDisp(bool bEnabled)
 {
-    ui->groupBoxNibp->setEnabled(bEnabled);
+    //ui->groupBoxNibp->setEnabled(bEnabled);
 }
 
 void MainWindow::enableEcgDisp(bool bEnabled)
