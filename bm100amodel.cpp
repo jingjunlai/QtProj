@@ -10,13 +10,14 @@ BM100AModel::~BM100AModel()
 
 }
 
-void BM100AModel::reciveData(const QString &str)
+
+void BM100AModel::handleData(const QByteArray &Data)
 {
-    QString tempStr = str;
-    tempStr = "0";
+    QByteArray tempData = Data;
+    tempData = "0";
 }
 
-void BM100AModel::handleData(QByteArray Data)
+void BM100AModel::doWork()
 {
 
 }

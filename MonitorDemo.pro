@@ -27,7 +27,10 @@ SOURCES += main.cpp\
     dialogmoduleinfo.cpp \
     mythreadserial.cpp \
     model.cpp \
-    bm100amodel.cpp
+    bm100amodel.cpp \
+    labelecgwave.cpp \
+    gpsmodel.cpp \
+    controller.cpp
 
 HEADERS  += mainwindow.h \
     dialogecgset.h \
@@ -42,7 +45,10 @@ HEADERS  += mainwindow.h \
     dialogmoduleinfo.h \
     mythreadserial.h \
     model.h \
-    bm100amodel.h
+    bm100amodel.h \
+    labelecgwave.h \
+    gpsmodel.h \
+    controller.h
 
 FORMS    += mainwindow.ui \
     dialogecgset.ui \

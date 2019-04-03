@@ -2,6 +2,8 @@
 #define MODEL_H
 
 #include <QObject>
+#include <QThread>
+#include "mythreadserial.h"
 
 class Model : public QObject
 {
@@ -9,13 +11,16 @@ class Model : public QObject
 public:
     explicit Model(QObject *parent = 0);
     virtual ~Model();
-
-    virtual void reciveData(const QString &str) = 0;
+    void setPort(MySerialPort * const pThreadPort);
 
 signals:
 
 public slots:
-    virtual void handleData(QByteArray Data) = 0;
+    virtual void handleData(const QByteArray &Data) = 0;
+    virtual void doWork() = 0;
+
+private:
+    MySerialPort *m_pSerialport;
 };
 
 #endif // MODEL_H

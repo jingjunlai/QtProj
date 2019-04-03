@@ -8,8 +8,10 @@ class BM100AModel : public Model
 public:
     BM100AModel();
     ~BM100AModel();
-    void reciveData(const QString &str);
-    virtual void handleData(QByteArray Data);
+    void handleData(const QByteArray &Data);
+
+public slots:
+    void doWork();
 };
 
 #endif // BM100AMODEL_H

@@ -2,12 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+#include <QThread>
 #include "dialogecgset.h"
-#include <QSerialPort>
-#include <QSerialPortInfo>
 #include "mythreadserial.h"
 #include "model.h"
-#include "bm100amodel.h"
+#include "gpsmodel.h"
+#include "labelecgwave.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -30,20 +32,26 @@ private slots:
     void enableTempDisp(bool bEnabled);
     void enableIbpDisp(bool bEnabled);
     void enableSp02Disp(bool bEnabled);
+    void on_pushButton_14_clicked();
+    void drawEcgWave();
+
+signals:
+    void openThread();
 
 private:
-//    void initNibpDisp();
-//    void initEcgDisp();
-//    void initTempDisp();
-//    void initSpo2Disp();
-//    void initIbpDisp();
+    void initDisp();
+    void detectPort();
+    void closeThread(QThread * const pThread);
 
-
-
-    Ui::MainWindow *ui;
-    MyThreadSerial *m_Serialport;
-    Model *m_Model;
-    unsigned long m_ulDataNum;
+    Ui::MainWindow  *ui;
+    QThread         *m_pPortThread;
+    MySerialPort    *m_pSerialport;
+    QSerialPort     *m_pSerial;
+    QThread         *m_pModelThread;
+    Model           *m_pModel;
+    QTimer          *m_pTimer;
+    LabelEcgWave    *m_pEcgWave;
+    unsigned long   m_ulDataNum;
 };
 
 #endif // MAINWINDOW_H

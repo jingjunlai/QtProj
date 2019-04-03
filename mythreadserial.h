@@ -5,26 +5,29 @@
 #include <QString>
 #include <QSerialPort>
 #include <QSerialPortInfo>
-#include <QThread>
-#include <QMessageBox>
 #include <QDebug>
+#include <QThread>
 
-
-class MyThreadSerial : public QObject
+class MySerialPort : public QObject
 {
     Q_OBJECT
 public:
-    explicit MyThreadSerial(const QString &m_Port, const int &m_iBuadRate, QObject *parent = NULL);
-    ~MyThreadSerial();
+    explicit MySerialPort(QObject *parent = NULL);
+    MySerialPort(const QString Port, const int &iBuadRate, bool &ret, QObject *parent = NULL);
+    ~MySerialPort();
+
+    static void detectPort(QStringList *slt);
+
 
 public slots:
     void readSerialData();
+    void doWork();
 
 signals:
-    void sendDataToMain(QByteArray Data);
+    void sendDataToModel(QByteArray Data);
 
 private:
-    QThread *m_Thread;
+
     QSerialPort *m_Serial;
     QString m_Port;
     int m_iBuadRate;
