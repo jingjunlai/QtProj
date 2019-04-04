@@ -19,6 +19,11 @@ void Model::setPort(MySerialPort * const pThreadPort)
     }
 }
 
+void Model::addPortCnt(unsigned int uiSize)
+{
+    emit sendPortDataSizeToMain(uiSize);
+}
+
 
 
 

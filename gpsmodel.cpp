@@ -1,5 +1,6 @@
 #include "gpsmodel.h"
 
+
 GpsModel::GpsModel()
 {
 
@@ -18,7 +19,8 @@ void GpsModel::receiveData(const QByteArray &data)
     //QThread::usleep(10);
 
     static unsigned int uiSize = 0;
-    uiSize = data.size();
+    uiSize += data.size();
+    addPortCnt(uiSize);
 
     static unsigned int uiIndex = 0;
     static unsigned int uiHeadCnt = 0;
@@ -96,8 +98,6 @@ void GpsModel::receiveData(const QByteArray &data)
 void GpsModel::doWork()
 {
     qDebug()<<"GpsModel do wrok ID = "<<QThread::currentThreadId();
-    if(m_pSerialport != NULL)
-        connect(m_pSerialport, SIGNAL(sendDataToModel(QByteArray)), this, SLOT(receiveData(QByteArray)), Qt::QueuedConnection);
 }
 
 void GpsModel::unpackData(unsigned char *pucBuff)
@@ -105,6 +105,6 @@ void GpsModel::unpackData(unsigned char *pucBuff)
     //Q_UNUSED(pucBuff);
     QByteArray ba((char*)pucBuff);
     qDebug() << "ucbuff data =" << ba.toHex();
-
 }
+
 

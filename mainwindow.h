@@ -52,6 +52,7 @@ private slots:
     void enableSp02Disp(bool bEnabled);
     void on_pushButton_14_clicked();
     void drawEcgWave();
+    void dispPortCnt(unsigned int uiSize);
 
 signals:
     void startThread();

@@ -17,7 +17,7 @@ void Controller::searchPort()
 
 bool Controller::openPort()
 {
-
+    return true;
 }
 
 void Controller::closePort()

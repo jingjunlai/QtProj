@@ -36,9 +36,6 @@ void MainWindow::enableWork()
     m_pEcgWave->lower();
     ui->label_2->raise();
     m_pTimer->start(8);
-
-    /*打印串口接收数量*/
-    connect(m_pModel, SIGNAL(sendPortDataSizeToMain(uint)), ui->labelPortCnt, SLOT(setText(QString.number(uint))));
 }
 
 void MainWindow::disableWork()
@@ -126,6 +123,11 @@ void MainWindow::drawEcgWave()
     m_pEcgWave->update();
 }
 
+void MainWindow::dispPortCnt(unsigned int uiSize)
+{
+    ui->labelPortCnt->setText(QString::number(uiSize));
+}
+
 
 void MainWindow::initDisp()
 {
@@ -158,13 +160,14 @@ void MainWindow::initDisp()
     ui->groupBoxPara_10->setStyleSheet("color:yellow;");
     ui->groupBoxPara_11->setStyleSheet("color:yellow;");
     ui->groupBoxPara_12->setStyleSheet("color:yellow;");
+    ui->labelPortCnt->setStyleSheet("color:yellow;");
 }
 
 void MainWindow::initPort()
 {
     /*串口线程*/
     m_pSerialport = new MySerialPort(ui->comboBoxComPort->currentText(), ui->comboBoxBaudrate->currentText().toInt());
-    m_pPortThread = new QThread(this);
+    m_pPortThread = new QThread;
     m_pSerialport->moveToThread(m_pPortThread);
     connect(this, SIGNAL(startThread()), m_pSerialport, SLOT(doWork()));
     connect(m_pSerialport, SIGNAL(enableMainWork()), this, SLOT(enableWork()));
@@ -173,29 +176,36 @@ void MainWindow::initPort()
 
 void MainWindow::destroyPort()
 {
-    disconnect(this, SIGNAL(startThread()), m_pSerialport, SLOT(doWork()));
-    disconnect(m_pSerialport, SIGNAL(enableMainWork()), this, SLOT(enableWork()));
-    m_pSerialport->deleteLater();
-    m_pSerialport = NULL;
-
+    if(m_pSerialport != NULL)
+    {
+        disconnect(this, SIGNAL(startThread()), m_pSerialport, SLOT(doWork()));
+        disconnect(m_pSerialport, SIGNAL(enableMainWork()), this, SLOT(enableWork()));
+        m_pSerialport->deleteLater();
+        m_pSerialport = NULL;
+    }
 }
 
 
 void MainWindow::initModel()
 {
     /*模型线程*/
-    m_pModel = new GpsModel();
+    m_pModel = new GpsModel;
     m_pModel->setPort(m_pSerialport);
-    m_pModelThread = new QThread(this);
+    m_pModelThread = new QThread;
     m_pModel->moveToThread(m_pModelThread);
+    /*打印串口接收数量*/
+    connect(m_pModel, SIGNAL(sendPortDataSizeToMain(uint)), this, SLOT(dispPortCnt(uint)));
     connect(this, SIGNAL(startThread()), m_pModel, SLOT(doWork()));
     m_pModelThread->start();
 }
 
 void MainWindow::destroyModel()
 {
-    m_pModel->deleteLater();
-    m_pModel = NULL;
+    if(m_pModel != NULL)
+    {
+        m_pModel->deleteLater();
+        m_pModel = NULL;
+    }
 }
 
 bool MainWindow::detectPort()
