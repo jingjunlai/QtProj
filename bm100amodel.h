@@ -3,12 +3,15 @@
 
 #include "model.h"
 
-class BM100AModel : public Model
+class BM100AModel //: public Model
 {
 public:
     BM100AModel();
     ~BM100AModel();
-    void handleData(const QByteArray &Data);
+    void receiveData(const QByteArray &Data);
+
+protected:
+    void unpackData(unsigned char *pucBuff);
 
 public slots:
     void doWork();

@@ -24,8 +24,26 @@ public:
     ~MainWindow();
 
 private slots:
+    /*!
+     * \brief enableWork ： 等待串口打开后启动工作。
+     */
+    void enableWork();
+    /*!
+     * \brief disableWork ： 关闭工作。
+     */
+    void disableWork();
+    /*!
+     * \brief on_pushButton_clicked ：
+     */
     void on_pushButton_clicked();
+    /*!
+     * \brief on_pushButtonStart_clicked ：
+     */
     void on_pushButtonStart_clicked();
+    /*!
+     * \brief setData :
+     * \param Data :
+     */
     void setData(QByteArray Data);
     void enableNibpDisp(bool bEnabled);
     void enableEcgDisp(bool bEnabled);
@@ -36,11 +54,15 @@ private slots:
     void drawEcgWave();
 
 signals:
-    void openThread();
+    void startThread();
 
 private:
     void initDisp();
-    void detectPort();
+    void initPort();
+    void destroyPort();
+    void initModel();
+    void destroyModel();
+    bool detectPort();
     void closeThread(QThread * const pThread);
 
     Ui::MainWindow  *ui;

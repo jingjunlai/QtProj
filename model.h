@@ -5,7 +5,7 @@
 #include <QThread>
 #include "mythreadserial.h"
 
-class Model : public QObject
+class Model //: public QObject
 {
     Q_OBJECT
 public:
@@ -13,13 +13,14 @@ public:
     virtual ~Model();
     void setPort(MySerialPort * const pThreadPort);
 
-signals:
-
-public slots:
-    virtual void handleData(const QByteArray &Data) = 0;
+protected slots:
+    virtual void receiveData(const QByteArray &data) = 0;
     virtual void doWork() = 0;
 
-private:
+protected:
+    virtual void unpackData(unsigned char *pucBuff) = 0;
+    virtual void sendPortDataSizeToMain(unsigned int uiSize) = 0;
+
     MySerialPort *m_pSerialport;
 };
 

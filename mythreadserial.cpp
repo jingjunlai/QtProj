@@ -5,11 +5,10 @@ MySerialPort::MySerialPort(QObject *parent) : QObject(parent)
 
 }
 
-MySerialPort::MySerialPort(const QString Port, const int &iBuadRate, bool &ret, QObject *parent) : QObject(parent)
+MySerialPort::MySerialPort(const QString Port, const int &iBuadRate, QObject *parent) : QObject(parent)
 {
     m_Port = Port;
     m_iBuadRate = iBuadRate;
-    ret = true;
 }
 
 MySerialPort::~MySerialPort()
@@ -32,9 +31,9 @@ void MySerialPort::detectPort(QStringList *slt)
 void MySerialPort::readSerialData()
 {
     QByteArray data = m_Serial->readAll();
-    qDebug() << QStringLiteral("data received(收到的数据):") << data.toHex();
-    QThread::usleep(10);
-    //emit sendDataToModel(data);
+    //qDebug() << QStringLiteral("data received(收到的数据):") << data.toHex();
+    //QThread::usleep(10);
+    emit sendDataToModel(data);
 }
 
 void MySerialPort::doWork()
@@ -49,10 +48,10 @@ void MySerialPort::doWork()
     m_Serial->setFlowControl(QSerialPort::NoFlowControl);
     if(!m_Serial->open(QIODevice::ReadWrite))
     {
-        qDebug()<<"port open failed!"<<endl;
-        //ret = false;
-        //return;
+        qDebug()<<"port open failed!";
+        return;
     }
     connect(m_Serial,SIGNAL(readyRead()),this,SLOT(readSerialData()),Qt::QueuedConnection);
+    emit enableMainWork();
 }
 

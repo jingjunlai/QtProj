@@ -307,6 +307,11 @@ Info</string>
      </property>
      <item>
       <property name="text">
+       <string>921600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>115200</string>
       </property>
      </item>
@@ -1782,6 +1787,24 @@ Info</string>
       <string>---</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="labelPortCnt">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>1000</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
    </widget>
   </widget>
  </widget>

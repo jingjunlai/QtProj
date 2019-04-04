@@ -13,7 +13,7 @@ class MySerialPort : public QObject
     Q_OBJECT
 public:
     explicit MySerialPort(QObject *parent = NULL);
-    MySerialPort(const QString Port, const int &iBuadRate, bool &ret, QObject *parent = NULL);
+    MySerialPort(const QString Port, const int &iBuadRate, QObject *parent = NULL);
     ~MySerialPort();
 
     static void detectPort(QStringList *slt);
@@ -25,6 +25,7 @@ public slots:
 
 signals:
     void sendDataToModel(QByteArray Data);
+    void enableMainWork();
 
 private:
 
