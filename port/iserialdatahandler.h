@@ -2,10 +2,19 @@
 #define ISERIALDATAHANDLER_H
 
 
+class ProtocolPacket;
+
 class ISerialDataHandler
 {
 public:
-    ISerialDataHandler();
+
+    explicit ISerialDataHandler();
+
+    virtual void parseData(const ProtocolPacket &packet) = 0;
+
+    virtual ~ISerialDataHandler()
+    {
+    }
 };
 
 #endif // ISERIALDATAHANDLER_H

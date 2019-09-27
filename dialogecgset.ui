@@ -10,6 +10,11 @@
     <height>403</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -35,22 +40,42 @@
      <x>10</x>
      <y>10</y>
      <width>54</width>
-     <height>12</height>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">
     <string>lead type</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="comboBoxLeadType">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>30</y>
      <width>81</width>
-     <height>20</height>
+     <height>23</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>3 lead</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5 lead</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>6 lead</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>12 lead</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -65,17 +90,77 @@
     <string>Cal lead</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="comboBoxCalLead">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>80</y>
      <width>81</width>
-     <height>20</height>
+     <height>23</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>I</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>II</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>III</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AVR</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AVL</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AVF</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>V1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>V2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>V3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>V4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>V5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>V6</string>
+    </property>
+   </item>
   </widget>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QGroupBox" name="groupBoxEcgGain">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -87,7 +172,10 @@
    <property name="title">
     <string>ECG Gain</string>
    </property>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QRadioButton" name="radioButton0_25X">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -100,7 +188,10 @@
      <string>0.25x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_2">
+   <widget class="QRadioButton" name="radioButton0_5X">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -113,7 +204,10 @@
      <string>0.5x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_3">
+   <widget class="QRadioButton" name="radioButton1X">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -126,7 +220,10 @@
      <string>1x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_4">
+   <widget class="QRadioButton" name="radioButton2X">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -139,7 +236,10 @@
      <string>2x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_5">
+   <widget class="QRadioButton" name="radioButton4X">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -166,12 +266,15 @@
     <string>ECG filter</string>
    </property>
    <widget class="QCheckBox" name="checkBox">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>71</width>
-      <height>16</height>
+      <width>89</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -179,12 +282,15 @@
     </property>
    </widget>
    <widget class="QCheckBox" name="checkBox_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>71</width>
-      <height>16</height>
+      <width>91</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -192,32 +298,41 @@
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>120</x>
       <y>20</y>
-      <width>101</width>
-      <height>20</height>
+      <width>69</width>
+      <height>23</height>
      </rect>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>120</x>
       <y>50</y>
-      <width>101</width>
-      <height>20</height>
+      <width>69</width>
+      <height>23</height>
      </rect>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_6">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>131</width>
-      <height>16</height>
+      <width>141</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -225,12 +340,15 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_7">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>110</y>
-      <width>107</width>
-      <height>16</height>
+      <width>110</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -238,85 +356,94 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_8">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>130</y>
-      <width>107</width>
-      <height>16</height>
+      <width>110</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>DRIFT FILTER 2</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_9">
+   <widget class="QRadioButton" name="radioButtonOpe">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>190</y>
-      <width>95</width>
-      <height>16</height>
+      <width>105</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>surgery mode</string>
+     <string>operation mode</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_10">
+   <widget class="QRadioButton" name="radioButtonDiag">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>210</y>
-      <width>77</width>
-      <height>16</height>
+      <width>88</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>Diag mode</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_11">
+   <widget class="QRadioButton" name="radioButtonMon">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>170</y>
-      <width>71</width>
-      <height>16</height>
+      <width>88</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>Mon mode</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_12">
+   <widget class="QRadioButton" name="radioButtonUser">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>250</y>
-      <width>77</width>
-      <height>16</height>
+      <width>86</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>user mode</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_14">
+   <widget class="QRadioButton" name="radioButtonST">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>230</y>
       <width>101</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>unfilter mode</string>
+     <string>ST mode</string>
     </property>
    </widget>
   </widget>
   <widget class="QPushButton" name="pushButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -330,6 +457,9 @@
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -339,15 +469,15 @@
     </rect>
    </property>
    <property name="title">
-    <string/>
+    <string>user</string>
    </property>
    <widget class="QRadioButton" name="radioButton_13">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>53</width>
-      <height>16</height>
+      <width>52</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -359,8 +489,8 @@
      <rect>
       <x>90</x>
       <y>20</y>
-      <width>53</width>
-      <height>16</height>
+      <width>50</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -372,12 +502,12 @@
      <rect>
       <x>170</x>
       <y>20</y>
-      <width>65</width>
-      <height>16</height>
+      <width>45</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>neonate</string>
+     <string>neo</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_17">
@@ -385,14 +515,67 @@
      <rect>
       <x>260</x>
       <y>20</y>
-      <width>53</width>
-      <height>16</height>
+      <width>59</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>paced</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>110</y>
+     <width>72</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>wave speed:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxWaveSpeed">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>130</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>6.25mm/s</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>12.5mm/s</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>25mm/s</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>50mm/s</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>100mm/s</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>full speed</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

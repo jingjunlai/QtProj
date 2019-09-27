@@ -1,22 +1,33 @@
 #ifndef DIALOGRESPSET_H
 #define DIALOGRESPSET_H
 
-#include <QDialog>
+#include "idialogset.h"
+#include "labelwave.h"
+#include <QButtonGroup>
 
 namespace Ui {
 class DialogRESPSet;
 }
 
-class DialogRESPSet : public QDialog
+class DialogRespSet : public IDialogSet
 {
     Q_OBJECT
 
 public:
-    explicit DialogRESPSet(QWidget *parent = 0);
-    ~DialogRESPSet();
+    explicit DialogRespSet(QWidget *parent = 0);
+
+    ~DialogRespSet();
+
+    void setWaveSpeed(const LabelWave::WaveSpeed &speed);
+
+private slots:
+    void on_buttonBox_accepted();
 
 private:
     Ui::DialogRESPSet *ui;
+
+    QButtonGroup        *m_pButtonGroupGain;
+    QButtonGroup        *m_pButtonGroupLead;
 };
 
 #endif // DIALOGRESPSET_H

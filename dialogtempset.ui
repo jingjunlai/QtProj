@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>DialogTEMPSet</class>
- <widget name="DialogTEMPSet" class="QDialog">
+ <widget class="QDialog" name="DialogTEMPSet">
+  <property name="enabled">
+   <bool>false</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,16 +13,21 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget name="buttonBox" class="QDialogButtonBox">
+  <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>341</width>
-     <height>32</height>
+     <x>220</x>
+     <y>260</y>
+     <width>156</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="orientation">
@@ -31,8 +37,137 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>120</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>TEMP</string>
+   </property>
+   <widget class="QPushButton" name="pushButtonEMP">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>75</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EMPTY</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSIN">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>75</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SINGLE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonDUAL">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>75</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DUAL</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>10</y>
+     <width>120</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>AC Frequency</string>
+   </property>
+   <widget class="QPushButton" name="pushButton50Hz">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>50Hz</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton60Hz">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>60Hz</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>130</y>
+     <width>120</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Sensor</string>
+   </property>
+   <widget class="QPushButton" name="pushButtonSen1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>YSL400</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSen2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>LB sensor</string>
+    </property>
+   </widget>
+  </widget>
  </widget>
- <pixmapfunction/>
  <resources/>
  <connections>
   <connection>

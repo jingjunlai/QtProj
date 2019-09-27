@@ -1,9 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>DialogWaveSet</class>
- <widget name="DialogWaveSet" class="QDialog">
+ <widget class="QDialog" name="DialogWaveSet">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,16 +10,21 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget name="buttonBox" class="QDialogButtonBox">
+  <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>341</width>
-     <height>32</height>
+     <x>230</x>
+     <y>260</y>
+     <width>156</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="orientation">
@@ -31,8 +34,345 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>235</width>
+     <height>146</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Ecg Lead</string>
+   </property>
+   <widget class="QCheckBox" name="checkBoxI">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>27</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>I</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxII">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>II</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxIII">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>35</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>III</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxAVR">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>47</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AVR</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxV2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>110</y>
+      <width>38</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxAVF">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>45</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AVF</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxV1">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>80</y>
+      <width>38</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxAVL">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>45</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AVL</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxV6">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>110</y>
+      <width>38</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V6</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxV4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>50</y>
+      <width>38</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V4</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxV5">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>38</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V5</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBoxV3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>20</y>
+      <width>38</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>V3</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QComboBox" name="comboBoxLeadSet">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>40</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Default</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>12 lead ECG</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Custom</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxSpo2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>53</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Spo2</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxResp">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>170</y>
+     <width>52</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Resp</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxRespS">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>170</y>
+     <width>87</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Resp_Spo2</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxIbp1">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>200</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ibp1</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxIbp2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>200</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ibp2</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxIbp3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>200</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ibp3</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxIbp4">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>230</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ibp4</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxCo2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>230</y>
+     <width>46</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Co2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>20</y>
+     <width>50</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lead Set</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
  <resources/>
  <connections>
   <connection>
